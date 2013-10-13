@@ -7,6 +7,15 @@ export ARCH=arm
 export CROSS_COMPILE=/home/sultan/Downloads/arm-cortex_a8-linux-gnueabi-linaro_4.7.4-2013.09/bin/arm-cortex_a8-linux-gnueabi-
 
 ## Build Sultan kernel
+rm -f /home/sultan/sultan-kernel-grouper-metallice/arch/arm/boot/zImage
 make -j$MAKE ARCH=arm
-
-
+sleep 1
+echo Zipping and copying zImage
+sleep 1
+rm -f /home/sultan/sultan-kernel-grouper-metallice/arch/arm/boot/zImage.zip
+cd /home/sultan/sultan-kernel-grouper-metallice/arch/arm/boot
+zip zImage.zip zImage
+rm -f /home/sultan/Documents/Nexus_7/zImage.zip
+cp /home/sultan/sultan-kernel-grouper-metallice/arch/arm/boot/zImage.zip /home/sultan/Documents/Nexus_7
+rm -f /home/sultan/sultan-kernel-grouper-metallice/arch/arm/boot/zImage.zip
+cd /home/sultan/sultan-kernel-grouper-metallice
