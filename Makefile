@@ -575,7 +575,21 @@ endif
 
 # This warning generated too much noise in a regular build.
 # Use make W=1 to enable this warning (see scripts/Makefile.build)
+#FIXME: TOO MANY WARNINGS!
 KBUILD_CFLAGS += $(call cc-disable-warning, unused-but-set-variable)
+KBUILD_CFLAGS += $(call cc-disable-warning, uninitialized)
+KBUILD_CFLAGS += $(call cc-disable-warning, array-bounds)
+KBUILD_CFLAGS += $(call cc-disable-warning, strict-prototype)
+KBUILD_CFLAGS += $(call cc-disable-warning, declaration-after-statement)
+KBUILD_CFLAGS += $(call cc-disable-warning, format)
+KBUILD_CFLAGS += $(call cc-disable-warning, unused-value)
+KBUILD_CFLAGS += $(call cc-disable-warning, unused-label)
+KBUILD_CFLAGS += $(call cc-disable-warning, undef)
+KBUILD_CFLAGS += $(call cc-disable-warning, format-extra-args)
+KBUILD_CFLAGS += $(call cc-disable-warning, unused-variable)
+KBUILD_CFLAGS += $(call cc-disable-warning, unused-function)
+KBUILD_CFLAGS += $(call cc-disable-warning, implicit-int)
+KBUILD_CFLAGS += $(call cc-disable-warning, sizeof-pointer-memaccess)
 
 #ifdef CONFIG_FRAME_POINTER
 #KBUILD_CFLAGS	+= -fno-omit-frame-pointer -fno-optimize-sibling-calls
