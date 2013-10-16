@@ -884,28 +884,28 @@ static ssize_t store_gpu_oc(struct cpufreq_policy *policy, const char *buf, size
 
 	for (i--; i >= 5; i--) {
 		mutex_lock(&dvfs_lock);
-/*		if (gpu_freq < 600) {
+		if (gpu_freq < 600) {
 			new_volt = 1200;
 			vde->dvfs->millivolts[i] = new_volt;
 			pr_info("NEW VOLTAGES < 600: %d\n", vde->dvfs->millivolts[i]);
 		}
 		if (gpu_freq >= 600 && gpu_freq < 666) {
-			new_volt = 1400;
+			new_volt = 1300;
 			vde->dvfs->millivolts[i] = new_volt;
 			pr_info("NEW VOLTAGES >= 600: %d\n", vde->dvfs->millivolts[i]);
 		}
 		if (gpu_freq >= 666 && gpu_freq < 750) {
-			new_volt = 1500;
+			new_volt = 1400;
 			vde->dvfs->millivolts[i] = new_volt;
 			pr_info("NEW VOLTAGES > 700: %d\n", vde->dvfs->millivolts[i]);
 		}
                 if (gpu_freq >= 700 && gpu_freq < 775) {
-                        new_volt = 1550;
+                        new_volt = 1450;
                         vde->dvfs->millivolts[i] = new_volt;
                         pr_info("NEW VOLTAGES >= 750: %d\n", vde->dvfs->millivolts[i]);
                 }
                 if (gpu_freq >= 750 && gpu_freq < 800) {
-                        new_volt = 1600;
+                        new_volt = 1500;
                         vde->dvfs->millivolts[i] = new_volt;
                         pr_info("NEW VOLTAGES >= 775: %d\n", vde->dvfs->millivolts[i]);
                 }
@@ -914,7 +914,6 @@ static ssize_t store_gpu_oc(struct cpufreq_policy *policy, const char *buf, size
                         vde->dvfs->millivolts[i] = new_volt;
                         pr_info("NEW VOLTAGES >= 800: %d\n", vde->dvfs->millivolts[i]);
                 }
-*/
 
 		vde->dvfs->freqs[i] = new_gpu_freq;
 		mpe->dvfs->freqs[i] = new_gpu_freq;
